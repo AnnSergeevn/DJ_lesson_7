@@ -7,6 +7,7 @@ from rest_framework.viewsets import ModelViewSet
 
 from advertisements.models import Advertisement
 from advertisements.serializers import AdvertisementSerializer
+from .filters import AdvertisementFilter
 
 from .permissions import IsOwnerOrReadOnly
 
@@ -16,6 +17,7 @@ class AdvertisementViewSet(ModelViewSet):
     queryset = Advertisement.objects.all()
     serializer_class = AdvertisementSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_class = AdvertisementFilter
     search_fields = ["status", "created_at"]
     ordering_fields = ["user", "created_at"]
     permission_classes = [IsOwnerOrReadOnly]
@@ -31,6 +33,4 @@ class AdvertisementViewSet(ModelViewSet):
         """Получение прав для действий."""
         if self.action in ["create", "update", "partial_update"]:
             return [IsAuthenticated()]
-        elif self.action in ["update", "partial_update", "destroy"]:
-            return [IsAuthenticated(), IsOwnerOrReadOnly()]
         return []
