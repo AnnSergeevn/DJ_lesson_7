@@ -1,7 +1,9 @@
 name:
   Check project
-on: push
-
+on:
+  push:
+    branches:
+     - main
 jobs:
   tests:
     runs-on: ubuntu-22.04
