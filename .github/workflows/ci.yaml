@@ -59,11 +59,11 @@ jobs:
            DB_HOST: ${{env.DB_HOST}}
            DB_POST: ${{env.DB_PORT}}
 
-        - name: Деплой
-          uses: appleboy/ssh-action@main
-          with:
-            host: ${{ secrets.SSH_HOST}}
-            username: ${{secrets.SSH_USER}}
-            password: ${{secrets.SSH_PASSWORD}}
-            script: ${{secrets.SSH_COMMAND}}
+#        - name: Деплой
+#          uses: appleboy/ssh-actions@main
+#          with:
+#            host: ${{ secrets.SSH_HOST}}
+#            username: ${{secrets.SSH_USER}}
+#            password: ${{secrets.SSH_PASSWORD}}
+#            script: ${{secrets.SSH_COMMAND}}
 
