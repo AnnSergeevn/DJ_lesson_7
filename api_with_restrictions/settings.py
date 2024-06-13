@@ -61,7 +61,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'api_with_restrictions.urls'
-
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
