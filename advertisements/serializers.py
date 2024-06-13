@@ -24,7 +24,7 @@ class AdvertisementSerializer(serializers.ModelSerializer):
     class Meta:
         model = Advertisement
         fields = ('id', 'title', 'description', 'creator',
-                  'status', 'created_at', )
+                  'status', 'created_at',)
 
     def create(self, validated_data):
         """Метод для создания"""
@@ -48,7 +48,8 @@ class AdvertisementSerializer(serializers.ModelSerializer):
         # Это условие нужно чтобы проходила валидация при редактировании
         if request == 'POST' \
                 and \
-                Advertisement.objects.filter(creator=user, status='OPEN').count() \
+                Advertisement.objects.filter(creator=user,
+                                             status='OPEN').count() \
                 >= 10:
             raise ValidationError('You cannot create more than 10 open ads')
         return data
