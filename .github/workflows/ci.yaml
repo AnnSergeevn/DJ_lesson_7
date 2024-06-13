@@ -38,11 +38,11 @@ jobs:
           uses: actions/checkout@v4
 
         - name: Установка python
-          uses: actions/setup-python@v4
+          uses: action/setup-python@v4
           with:
             python-version: '3.10'
 
-        - name: Установка завистмостей
+        - name: Установка завистмостейf
           run: pip install -r requirements.txt
 
         - name: Линтинг
