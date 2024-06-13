@@ -5,8 +5,8 @@ from django.db import models
 class AdvertisementStatusChoices(models.TextChoices):
     """Статусы объявления."""
 
-    OPEN = "OPEN", "Открыто"
-    CLOSED = "CLOSED", "Закрыто"
+    OPEN = "OPEN", "Открыто!"
+    CLOSED = "CLOSED", "Закрыто!"
 
 
 class Advertisement(models.Model):
