@@ -14,6 +14,7 @@ class AdvertisementStatusChoices(models.TextChoices):
 class Advertisement(models.Model):
     """Объявление."""
 
+    objects = None
     title = models.TextField()
     description = models.TextField(default='')
     status = models.TextField(
