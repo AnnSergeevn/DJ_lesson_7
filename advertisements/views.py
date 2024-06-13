@@ -12,7 +12,7 @@ from .permissions import IsOwnerOrReadOnly
 
 
 class AdvertisementViewSet(ModelViewSet):
-    """ViewSet для объявлений."""
+    """ViewSet для объявлений!!!"""
     queryset = Advertisement.objects.all()
     serializer_class = AdvertisementSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
