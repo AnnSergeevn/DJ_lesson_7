@@ -4,7 +4,6 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.throttling import AnonRateThrottle, UserRateThrottle
 from rest_framework.viewsets import ModelViewSet
 
-
 from advertisements.models import Advertisement
 from advertisements.serializers import AdvertisementSerializer
 from .filters import AdvertisementFilter
@@ -23,11 +22,8 @@ class AdvertisementViewSet(ModelViewSet):
     permission_classes = [IsOwnerOrReadOnly]
     throttle_classes = [UserRateThrottle, AnonRateThrottle]
 
-
-
     # TODO: настройте ViewSet, укажите атрибуты для кверисета,
     #   сериализаторов и фильтров
-
 
     def get_permissions(self):
         """Получение прав для действий."""
