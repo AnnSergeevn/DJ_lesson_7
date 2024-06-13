@@ -1,8 +1,6 @@
 from django.contrib.auth import get_user_model
 from django_filters import rest_framework as filters
-
 from advertisements.models import Advertisement
-
 User = get_user_model()
 
 
@@ -14,4 +12,3 @@ class AdvertisementFilter(filters.FilterSet):
     class Meta:
         model = Advertisement
         fields = ['created_at', 'creator', 'status']
-        
