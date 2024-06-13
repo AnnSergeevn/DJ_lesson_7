@@ -46,11 +46,14 @@ class AdvertisementSerializer(serializers.ModelSerializer):
         # Проверяем что пользователь имеет менее 10 объявлений
         # self.instance отсутствует если объект создается.
         # Это условие нужно чтобы проходила валидация при редактировании
-        if request == 'POST' and Advertisement.objects.filter(creator=user, status='OPEN').count() >= 10:
+        if request == 'POST' \
+                and \
+                Advertisement.objects.filter(creator=user, status='OPEN').count() >= 10:
             raise ValidationError('You cannot create more than 10 open ads')
 
         # if request in ('PATCH', 'PUT') and data.get('status') == 'OPEN' \
-        #         and Advertisement.objects.filter(creator=user, status='OPEN').count() >= 10:
+        #     and \
+        #     Advertisement.objects.filter(creator=user, status='OPEN').count() >= 10:
         #     raise ValidationError('You cannot create more than 10 open ads')
 
         return data

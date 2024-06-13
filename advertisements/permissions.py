@@ -6,6 +6,3 @@ class IsOwnerOrReadOnly(BasePermission):
         if request.method == "GET":
             return True
         return request.user == obj.creator
-
-
-
