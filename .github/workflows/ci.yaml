@@ -35,7 +35,7 @@ jobs:
           --health-retries 5
     steps:
         - name: Проверка на наличие изменений
-          uses: actions/checkout@v5
+          uses: actions/checkout@v4
 
         - name: Установка python
           uses: actions/setup-python@v5
