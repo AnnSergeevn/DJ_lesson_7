@@ -14,7 +14,7 @@ class Advertisement(models.Model):
 
     objects = None
     title = models.TextField()
-    description = models.TextField(default='')
+    description = models.TextField(default='dgnhthjyuj')
     status = models.TextField(
         choices=AdvertisementStatusChoices.choices,
         default=AdvertisementStatusChoices.OPEN
